@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - SafeMind Clinic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Safe<span>Mind</span> Clinic</div>
+        <div class="tagline">Accessible Therapy. Trusted Support.</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="therapists.html">Therapists</a>
+            <a href="appointment.html" class="active">Book Now</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Main Booking Card -->
+        <div class="card">
+            <h2>📅 Book Your Appointment</h2>
+            <p>Fill out the form below to schedule a confidential session with one of our licensed therapists. All information is kept private and secure.</p>
+            
+            <!-- Progress Steps -->
+            <div style="display: flex; justify-content: space-between; margin: 2rem 0; flex-wrap: wrap;">
+                <div style="text-align: center; flex: 1;">
+                    <div style="background: var(--pink-primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold;">1</div>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Your Info</p>
+                </div>
+                <div style="text-align: center; flex: 1;">
+                    <div style="background: var(--pink-primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold;">2</div>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Select Therapist</p>
+                </div>
+                <div style="text-align: center; flex: 1;">
+                    <div style="background: var(--pink-primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold;">3</div>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Pick Date & Time</p>
+                </div>
+                <div style="text-align: center; flex: 1;">
+                    <div style="background: var(--pink-primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold;">4</div>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">Confirm</p>
+                </div>
+            </div>
+            
+            <!-- Appointment Form -->
+            <form id="appointmentForm" class="appointment-form">
+                <!-- Section 1: Personal Information -->
+                <h3 style="margin-top: 0;">👤 Personal Information</h3>
+                
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="appt_name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="appt_email" required placeholder="you@example.com">
+                    <small style="color: #718096;">We'll send confirmation to this email</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="appt_phone" required placeholder="+254 700 000 000">
+                </div>
+                
+                <!-- Section 2: Select Therapist -->
+                <h3>👩‍⚕️ Select Your Therapist</h3>
+                
+                <div class="form-group">
+                    <label>Choose a Therapist *</label>
+                    <select id="appt_therapist" required>
+                        <option value="">-- Choose a therapist --</option>
+                        <option value="Dr. Sarah Kimani">Dr. Sarah Kimani - Clinical Psychologist (Anxiety, Depression)</option>
+                        <option value="James Mwangi">James Mwangi - Licensed Counselor (Relationships, Stress)</option>
+                        <option value="Dr. Amina Hassan">Dr. Amina Hassan - Psychiatrist (Medication, Bipolar)</option>
+                        <option value="Mary Wanjiku">Mary Wanjiku - Therapy Specialist (Youth, Self-esteem)</option>
+                    </select>
+                </div>
+                
+                <!-- Therapist Preview (shows when selected) -->
+                <div id="therapistPreview" style="display: none; background: #f0f0f0; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <p id="therapistInfo" style="margin: 0;"></p>
+                </div>
+                
+                <!-- Section 3: Session Details -->
+                <h3>🎯 Session Details</h3>
+                
+                <div class="form-group">
+                    <label>Session Type *</label>
+                    <select id="appt_type" required>
+                        <option value="">-- Select session type --</option>
+                        <option value="In-Person">🏢 In-Person (Nairobi Clinic)</option>
+                        <option value="Online">💻 Online (Video Call - Zoom/Google Meet)</option>
+                        <option value="Phone">📞 Phone Consultation</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Preferred Date *</label>
+                    <input type="date" id="appt_date" required min="2026-04-05">
+                    <small style="color: #718096;">Sessions available Monday - Saturday</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Preferred Time *</label>
+                    <select id="appt_time" required>
+                        <option value="">-- Select time slot --</option>
+                        <option value="09:00 AM">09:00 AM (Morning)</option>
+                        <option value="10:00 AM">10:00 AM (Morning)</option>
+                        <option value="11:00 AM">11:00 AM (Morning)</option>
+                        <option value="02:00 PM">02:00 PM (Afternoon)</option>
+                        <option value="03:00 PM">03:00 PM (Afternoon)</option>
+                        <option value="04:00 PM">04:00 PM (Afternoon)</option>
+                    </select>
+                </div>
+                
+                <!-- Quick time slots buttons -->
+                <div style="margin-bottom: 1.5rem;">
+                    <label>Quick Select Time:</label>
+                    <div class="time-slots">
+                        <span class="time-slot" data-time="09:00 AM">09:00</span>
+                        <span class="time-slot" data-time="10:00 AM">10:00</span>
+                        <span class="time-slot" data-time="11:00 AM">11:00</span>
+                        <span class="time-slot" data-time="02:00 PM">14:00</span>
+                        <span class="time-slot" data-time="03:00 PM">15:00</span>
+                        <span class="time-slot" data-time="04:00 PM">16:00</span>
+                    </div>
+                </div>
+                
+                <!-- Section 4: Additional Info -->
+                <h3>📝 Additional Information (Optional)</h3>
+                
+                <div class="form-group">
+                    <label>What would you like to discuss?</label>
+                    <textarea id="appt_notes" rows="3" placeholder="Share anything you'd like the therapist to know..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>How did you hear about us?</label>
+                    <select id="appt_source">
+                        <option value="">-- Select --</option>
+                        <option value="Google">Google Search</option>
+                        <option value="Social Media">Social Media</option>
+                        <option value="Friend">Friend/Family</option>
+                        <option value="Doctor">Doctor Referral</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <!-- Terms Agreement -->
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="appt_terms" required style="width: auto;">
+                        I agree to the <a href="#" style="color: var(--pink-primary);">Terms of Service</a> and <a href="#" style="color: var(--pink-primary);">Privacy Policy</a> *
+                    </label>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" style="width: 100%; padding: 1rem;">
+                    ✓ Confirm & Book Appointment
+                </button>
+                
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #718096;">
+                    🔒 All information is encrypted and confidential. You can cancel or reschedule up to 24 hours before your session.
+                </p>
+            </form>
+        </div>
+        
+        <!-- Information Card -->
+        <div class="card">
+            <h3>❓ Frequently Asked Questions</h3>
+            
+            <div style="margin-bottom: 1rem;">
+                <strong>How long is each session?</strong>
+                <p style="margin-top: 0.25rem;">Standard sessions are 50-60 minutes. First sessions may take up to 75 minutes for initial assessment.</p>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <strong>What is the cost?</strong>
+                <p style="margin-top: 0.25rem;">Individual sessions: KES 3,500 - 5,500 depending on therapist. Insurance accepted.</p>
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <strong>Can I change my appointment?</strong>
+                <p style="margin-top: 0.25rem;">Yes! Log into your dashboard to reschedule or cancel up to 24 hours before your session.</p>
+            </div>
+            
+            <div>
+                <strong>Is everything confidential?</strong>
+                <p style="margin-top: 0.25rem;">Absolutely. All sessions are 100% confidential and protected by law.</p>
+            </div>
+        </div>
+        
+        <!-- Emergency Card -->
+        <div class="card" style="background: linear-gradient(135deg, #fff5f8 0%, #fff 100%); border: 2px solid var(--pink-primary);">
+            <h3 style="color: var(--pink-primary);">🚨 Mental Health Emergency?</h3>
+            <p>If you're in crisis or having thoughts of harming yourself, please call immediately:</p>
+            <p style="font-size: 1.5rem; font-weight: bold; margin: 1rem 0;">🇰🇪 Kenya Red Cross: 1199</p>
+            <p>Or visit your nearest hospital emergency room. You are not alone.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://facebook.com/safemind" target="_blank">📘 Facebook</a>
+            <a href="https://instagram.com/safemind" target="_blank">📷 Instagram</a>
+            <a href="https://youtube.com/@safemind" target="_blank">▶️ YouTube</a>
+            <a href="https://twitter.com/safemind" target="_blank">🐦 Twitter</a>
+        </div>
+        <p>📞 Crisis Helpline: +254 700 000 000 | 24/7 Available</p>
+        <p>&copy; 2026 SafeMind Clinic | Your mental health matters</p>
+    </footer>
+
+    <!-- Additional JavaScript for this page only -->
+    <script>
+        // Quick time slot selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                // Remove selected class from all slots
+                document.querySelectorAll('.time-slot').forEach(s => {
+                    s.classList.remove('selected');
+                });
+                // Add selected class to clicked slot
+                this.classList.add('selected');
+                // Set the select dropdown value
+                const timeSelect = document.getElementById('appt_time');
+                const timeValue = this.getAttribute('data-time');
+                if (timeSelect) {
+                    timeSelect.value = timeValue;
+                }
+            });
+        });
+        
+        // Therapist preview
+        const therapistSelect = document.getElementById('appt_therapist');
+        const therapistPreview = document.getElementById('therapistPreview');
+        const therapistInfo = document.getElementById('therapistInfo');
+        
+        if (therapistSelect) {
+            therapistSelect.addEventListener('change', function() {
+                const selectedTherapist = this.value;
+                if (selectedTherapist) {
+                    let info = '';
+                    if (selectedTherapist.includes('Dr. Sarah')) {
+                        info = '⭐ Dr. Sarah specializes in anxiety, depression, and trauma. Available Mon, Wed, Fri.';
+                    } else if (selectedTherapist.includes('James')) {
+                        info = '⭐ James specializes in relationships, stress management, and career guidance. Available Tue, Thu, Sat.';
+                    } else if (selectedTherapist.includes('Dr. Amina')) {
+                        info = '⭐ Dr. Amina specializes in medication management, bipolar disorder, and OCD. Available Mon, Tue, Thu.';
+                    } else if (selectedTherapist.includes('Mary')) {
+                        info = '⭐ Mary specializes in youth counseling, self-esteem, and mindfulness. Available Wed, Fri, Sat.';
+                    }
+                    therapistInfo.innerHTML = info;
+                    therapistPreview.style.display = 'block';
+                } else {
+                    therapistPreview.style.display = 'none';
+                }
+            });
+        }
+        
+        // Set minimum date to tomorrow
+        const dateInput = document.getElementById('appt_date');
+        if (dateInput) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const yyyy = tomorrow.getFullYear();
+            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const dd = String(tomorrow.getDate()).padStart(2, '0');
+            dateInput.min = `${yyyy}-${mm}-${dd}`;
+        }
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

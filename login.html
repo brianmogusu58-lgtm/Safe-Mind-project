@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SafeMind Clinic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Safe<span>Mind</span> Clinic</div>
+        <div class="tagline">Accessible Therapy. Trusted Support.</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="therapists.html">Therapists</a>
+            <a href="appointment.html">Book Now</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="active">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Login Form Card -->
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+            <h2 style="text-align: center; border-left: none;">🔐 Welcome Back</h2>
+            <p style="text-align: center;">Log in to access your dashboard, view appointments, and manage your therapy journey.</p>
+            
+            <!-- Login Form -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>📧 Email Address</label>
+                    <input type="email" id="login_email" required placeholder="you@example.com">
+                    <small style="color: #718096;">Use the email you used to book appointments</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>🔒 Password</label>
+                    <input type="password" id="login_password" required placeholder="Enter your password">
+                    <small style="color: #718096;">
+                        <a href="#" style="color: var(--pink-primary);">Forgot password?</a>
+                    </small>
+                </div>
+                
+                <button type="submit" class="submit-btn" style="width: 100%; padding: 1rem;">
+                    🚀 Login to Dashboard
+                </button>
+            </form>
+            
+            <!-- Demo Notice -->
+            <div style="margin-top: 1.5rem; padding: 1rem; background: #f0f4f8; border-radius: 10px; text-align: center;">
+                <p style="margin: 0; font-size: 0.9rem;">
+                    <strong>📱 Demo Mode</strong><br>
+                    Any email and password works for testing.<br>
+                    Example: <code>demo@safemind.com</code> (any password)
+                </p>
+            </div>
+            
+            <hr style="margin: 1.5rem 0; display: block; height: 1px; background: #e2e8f0;">
+            
+            <p style="text-align: center;">
+                Don't have an account? <a href="appointment.html" style="color: var(--pink-primary); font-weight: bold;">Book your first session</a>
+            </p>
+            
+            <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem;">
+                <a href="#" style="color: #718096;">Privacy Policy</a> | 
+                <a href="#" style="color: #718096;">Terms of Service</a>
+            </p>
+        </div>
+        
+        <!-- Info Card: Benefits of Logging In -->
+        <div class="card" style="max-width: 500px; margin: 1rem auto 0;">
+            <h3>✨ Why Create an Account?</h3>
+            <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                <li>📅 View all your upcoming appointments</li>
+                <li>🔄 Reschedule or cancel sessions</li>
+                <li>📊 Track your therapy progress</li>
+                <li>📝 Access mental health resources</li>
+                <li>🔔 Get appointment reminders</li>
+            </ul>
+        </div>
+        
+        <!-- Help Card -->
+        <div class="card" style="max-width: 500px; margin: 1rem auto 0; background: linear-gradient(135deg, #fff5f8 0%, #fff 100%);">
+            <h3>❓ Need Help?</h3>
+            <p>Having trouble logging in? Contact our support team:</p>
+            <p>
+                📧 <a href="mailto:support@safemind.com" style="color: var(--pink-primary);">support@safemind.com</a><br>
+                📞 <a href="tel:+254700000000" style="color: var(--pink-primary);">+254 700 000 000</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://facebook.com/safemind" target="_blank">📘 Facebook</a>
+            <a href="https://instagram.com/safemind" target="_blank">📷 Instagram</a>
+            <a href="https://youtube.com/@safemind" target="_blank">▶️ YouTube</a>
+            <a href="https://twitter.com/safemind" target="_blank">🐦 Twitter</a>
+        </div>
+        <p>📞 Crisis Helpline: +254 700 000 000 | 24/7 Available</p>
+        <p>&copy; 2026 SafeMind Clinic | Your mental health matters</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

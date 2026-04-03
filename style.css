@@ -1,112 +1,225 @@
-/* --- 1. Variables & Global Styles --- */
+/* ===== SAFEMIND CLINIC - COMPLETE STYLESHEET ===== */
+/* Brand Colors: Blue (Trust) + Pink (Compassion) */
+
 :root {
-    --primary: #2c3e50;       /* Trusting Dark Blue */
-    --accent: #1abc9c;        /* Healing Mint Green */
-    --accent-hover: #16a085;
-    --bg-body: #f0f4f8;
-    --text-dark: #334155;
-    --text-light: #94a3b8;
+    --blue-dark: #1a365d;      /* Trust, Professional */
+    --blue-light: #2b6cb0;     /* Calm, Stability */
+    --pink-primary: #ed64a6;    /* Compassion, Care */
+    --pink-light: #fff5f8;      /* Warm, Welcoming */
+    --gray-bg: #f7fafc;
+    --gray-text: #4a5568;
     --white: #ffffff;
     --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 30px rgba(0, 0, 0, 0.12);
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease; /* Makes every change smooth */
 }
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-body);
-    color: var(--text-dark);
+    background-color: var(--gray-bg);
+    color: var(--gray-text);
     line-height: 1.6;
-    margin: 0;
 }
 
-/* --- 2. Header & Nav --- */
+/* ===== HEADER & NAVIGATION ===== */
 header {
-    background: linear-gradient(135deg, var(--primary) 0%, #3e5871 100%);
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
     color: var(--white);
-    padding: 4rem 1rem 6rem 1rem; /* Extra padding at bottom for overlap */
+    padding: 2rem 1rem 5rem 1rem;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+.logo {
+    font-size: 2rem;
     font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.logo span {
+    color: var(--pink-primary);
 }
 
 .tagline {
-    opacity: 0.8;
-    margin-bottom: 20px;
-}
-
-nav a {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-nav a:hover, nav a.active {
-    color: var(--accent);
-}
-
-/* --- 3. Layout Card --- */
-main {
-    max-width: 850px;
-    margin: -4rem auto 4rem auto; /* Creates the "overlap" effect */
-    background: var(--white);
-    border-radius: 16px;
-    padding: 3rem;
-    box-shadow: var(--shadow);
-}
-
-section {
-    margin-bottom: 3rem;
-}
-
-h2, h3 {
-    color: var(--primary);
-    border-left: 4px solid var(--accent);
-    padding-left: 15px;
+    opacity: 0.9;
+    font-size: 1rem;
     margin-bottom: 1.5rem;
 }
 
-/* --- 4. Contact Info Grid --- */
-.contact-grid {
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--pink-primary);
+    border-bottom: 2px solid var(--pink-primary);
+}
+
+/* ===== MAIN CONTENT CARDS ===== */
+main {
+    max-width: 1200px;
+    margin: -3rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3 {
+    color: var(--blue-dark);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--pink-primary);
+    padding-left: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin: 1.5rem 0 1rem 0;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--white) 100%);
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    border-left: none;
+    font-size: 2.2rem;
+    color: var(--blue-dark);
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--pink-primary);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    transition: all 0.3s;
+}
+
+.cta-btn:hover {
+    background: var(--blue-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ===== FEATURES GRID ===== */
+.features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 1.8rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== SERVICES GRID ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--pink-primary);
+}
+
+.service-card h3 {
+    color: var(--blue-dark);
+    margin-top: 0;
+}
+
+/* ===== THERAPISTS GRID ===== */
+.therapists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
     margin-top: 2rem;
 }
 
-.info-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 1.5rem;
-    border-radius: 12px;
+.therapist-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
     text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
 }
 
-.info-card strong {
-    display: block;
-    color: var(--accent);
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    margin-bottom: 5px;
-}
-
-.info-card:hover {
+.therapist-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
 }
 
-/* --- 5. Form Styling --- */
+.therapist-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: var(--blue-light);
+}
+
+.therapist-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.therapist-specialty {
+    color: var(--pink-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== FORM STYLES ===== */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -114,89 +227,207 @@ h2, h3 {
 label {
     display: block;
     font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--blue-dark);
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 12px 16px;
+    padding: 0.8rem 1rem;
     border: 2px solid #e2e8f0;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
-    background: #fcfcfc;
+    transition: all 0.3s;
 }
 
-input:focus, textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.1);
+    border-color: var(--pink-primary);
+    box-shadow: 0 0 0 3px rgba(237, 100, 166, 0.2);
 }
 
 .submit-btn {
-    background: var(--accent);
-    color: white;
+    background: var(--pink-primary);
+    color: var(--white);
     border: none;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2rem;
     border-radius: 50px;
-    font-weight: 700;
-    cursor: pointer;
+    font-weight: bold;
     font-size: 1rem;
-    box-shadow: 0 4px 12px rgba(26, 188, 156, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 .submit-btn:hover {
-    background: var(--accent-hover);
-    transform: scale(1.05);
+    background: var(--blue-dark);
+    transform: scale(1.02);
 }
 
-/* --- 6. Footer --- */
+/* ===== APPOINTMENT FORM ===== */
+.appointment-form {
+    background: var(--pink-light);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.time-slot {
+    background: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.time-slot:hover, .time-slot.selected {
+    background: var(--pink-primary);
+    color: var(--white);
+    border-color: var(--pink-primary);
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.social-links a {
+    color: var(--blue-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--pink-primary);
+}
+
+/* ===== MESSAGE ALERTS ===== */
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    max-width: 350px;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #c6f6d5;
+    color: #22543d;
+    border-left: 4px solid #38a169;
+}
+
+.message.error {
+    background: #fed7d7;
+    color: #742a2a;
+    border-left: 4px solid #e53e3e;
+}
+
+/* ===== FOOTER ===== */
 footer {
+    background: var(--blue-dark);
+    color: var(--white);
     text-align: center;
     padding: 2rem;
-    color: var(--text-light);
-    font-size: 0.85rem;
+    margin-top: 2rem;
 }
 
-/* Hide the old HR lines */
-hr { display: none; }
-.cta-btn {
-    display: inline-block;
-    background: var(--accent);
-    color: white;
-    padding: 12px 28px;
-    border-radius: 50px;
+footer a {
+    color: var(--pink-primary);
     text-decoration: none;
-    font-weight: bold;
-    margin-top: 15px;
 }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    main {
+        padding: 0 1rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero {
+        padding: 2rem 1rem;
+    }
 }
 
-.feature {
-    background: #f8fafc;
-    padding: 1.8rem;
-    border-radius: 16px;
-    text-align: center;
-}
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+@media (max-width: 480px) {
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        margin: 0;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .features-grid, .services-grid, .therapists-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 1.2rem;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 }
 
-.service-card {
-    background: #f8fafc;
-    padding: 1.8rem;
-    border-radius: 16px;
-    transition: transform 0.2s;
+/* ===== TABLE STYLES FOR DASHBOARD ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background: var(--pink-light);
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: var(--pink-light);
 }

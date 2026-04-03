@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - SafeMind Clinic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Safe<span>Mind</span> Clinic</div>
+        <div class="tagline">Welcome back, <span id="userName">Client</span>!</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="therapists.html">Therapists</a>
+            <a href="appointment.html">Book Now</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="#" id="logoutBtn">🚪 Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Welcome Section -->
+        <div class="card" style="background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%); color: white;">
+            <h2 style="color: white; border-left-color: var(--pink-primary);">🌸 Your Wellness Journey</h2>
+            <p style="font-size: 1.1rem;">You're taking an important step toward mental wellness. We're here to support you every step of the way.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 50px;">📅 Track appointments</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 50px;">📊 Monitor progress</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 50px;">📚 Access resources</span>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+            <div class="card" style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2rem;">📅</div>
+                <div style="font-size: 1.8rem; font-weight: bold; color: var(--blue-dark);" id="totalBookings">0</div>
+                <div>Total Appointments</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2rem;">⏳</div>
+                <div style="font-size: 1.8rem; font-weight: bold; color: var(--blue-dark);" id="upcomingCount">0</div>
+                <div>Upcoming Sessions</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2rem;">⭐</div>
+                <div style="font-size: 1.8rem; font-weight: bold; color: var(--blue-dark);">4.9</div>
+                <div>Client Rating</div>
+            </div>
+            <div class="card" style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2rem;">🎯</div>
+                <div style="font-size: 1.8rem; font-weight: bold; color: var(--blue-dark);">100%</div>
+                <div>Confidential</div>
+            </div>
+        </div>
+
+        <!-- Appointments Section -->
+        <div class="card">
+            <h3>📅 My Appointments</h3>
+            <div id="bookingsTable"></div>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="appointment.html" class="cta-btn">+ Book New Appointment</a>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2rem;">🔄</div>
+                <h3>Reschedule</h3>
+                <p>Need to change your appointment time?</p>
+                <a href="appointment.html" class="submit-btn" style="display: inline-block; margin-top: 0.5rem;">Reschedule</a>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2rem;">📞</div>
+                <h3>Emergency Support</h3>
+                <p>24/7 Crisis Helpline Available</p>
+                <a href="tel:+254700000000" class="submit-btn" style="display: inline-block; margin-top: 0.5rem; background: #e53e3e;">Call Now</a>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2rem;">📝</div>
+                <h3>Feedback</h3>
+                <p>Share your experience with us</p>
+                <a href="contact.html" class="submit-btn" style="display: inline-block; margin-top: 0.5rem;">Give Feedback</a>
+            </div>
+        </div>
+
+        <!-- Mental Health Resources -->
+        <div class="card">
+            <h3>📚 Mental Health Resources</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                
+                <div style="background: var(--pink-light); padding: 1rem; border-radius: 12px;">
+                    <div style="font-size: 1.5rem;">🧘</div>
+                    <h4>Guided Meditation</h4>
+                    <p>10-minute mindfulness exercise for stress relief</p>
+                    <a href="#" style="color: var(--pink-primary);">Listen now →</a>
+                </div>
+                
+                <div style="background: var(--pink-light); padding: 1rem; border-radius: 12px;">
+                    <div style="font-size: 1.5rem;">📖</div>
+                    <h4>Wellness Journal</h4>
+                    <p>Track your mood and daily thoughts</p>
+                    <a href="#" style="color: var(--pink-primary);">Start journaling →</a>
+                </div>
+                
+                <div style="background: var(--pink-light); padding: 1rem; border-radius: 12px;">
+                    <div style="font-size: 1.5rem;">🎥</div>
+                    <h4>Video Library</h4>
+                    <p>Educational videos about mental health</p>
+                    <a href="#" style="color: var(--pink-primary);">Watch videos →</a>
+                </div>
+                
+                <div style="background: var(--pink-light); padding: 1rem; border-radius: 12px;">
+                    <div style="font-size: 1.5rem;">📄</div>
+                    <h4>Self-Assessment</h4>
+                    <p>Anxiety and depression screening tools</p>
+                    <a href="#" style="color: var(--pink-primary);">Take assessment →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="card">
+            <h3>💡 Daily Wellness Tip</h3>
+            <div id="dailyTip" style="background: #f0f4f8; padding: 1.5rem; border-radius: 12px; font-size: 1.1rem;">
+                Loading your wellness tip...
+            </div>
+        </div>
+
+        <!-- Contact Support -->
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, #fff5f8 0%, #fff 100%);">
+            <h3>💬 Need to talk to someone?</h3>
+            <p>Our support team is available Monday-Friday, 8am-5pm</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:support@safemind.com" class="submit-btn">📧 Email Support</a>
+                <a href="tel:+254700000000" class="cta-btn">📞 Call Us</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://facebook.com/safemind" target="_blank">📘 Facebook</a>
+            <a href="https://instagram.com/safemind" target="_blank">📷 Instagram</a>
+            <a href="https://youtube.com/@safemind" target="_blank">▶️ YouTube</a>
+            <a href="https://twitter.com/safemind" target="_blank">🐦 Twitter</a>
+        </div>
+        <p>📞 Crisis Helpline: +254 700 000 000 | 24/7 Available</p>
+        <p>&copy; 2026 SafeMind Clinic | Your mental health matters</p>
+    </footer>
+
+    <!-- Additional JavaScript for Dashboard -->
+    <script>
+        // Daily Wellness Tips Array
+        const wellnessTips = [
+            "🌿 Take a deep breath. You are doing the best you can, and that is enough.",
+            "💪 You are stronger than you think. Every small step counts.",
+            "🧠 Your mental health is just as important as your physical health.",
+            "🌟 It's okay to not be okay. Asking for help is a sign of strength.",
+            "📝 Write down three things you're grateful for today.",
+            "🚶 Take a 5-minute walk outside. Fresh air can help clear your mind.",
+            "💧 Drink a glass of water. Staying hydrated helps your mood.",
+            "😴 Aim for 7-8 hours of sleep tonight. Rest is healing.",
+            "🎵 Listen to your favorite song. Music is therapy.",
+            "🤝 Reach out to someone you trust. Connection helps healing.",
+            "📵 Take a 10-minute break from your phone. Be present.",
+            "🎯 Set one small goal for today. Celebrate when you achieve it."
+        ];
+        
+        // Display random daily tip
+        const randomTip = wellnessTips[Math.floor(Math.random() * wellnessTips.length)];
+        const tipDiv = document.getElementById('dailyTip');
+        if (tipDiv) {
+            tipDiv.innerHTML = randomTip;
+        }
+        
+        // Update statistics
+        function updateStats() {
+            const user = JSON.parse(localStorage.getItem('safemind_user') || '{}');
+            const bookings = JSON.parse(localStorage.getItem('safemind_bookings') || '[]');
+            const myBookings = bookings.filter(booking => booking.email === user.email);
+            
+            const totalBookingsSpan = document.getElementById('totalBookings');
+            if (totalBookingsSpan) {
+                totalBookingsSpan.textContent = myBookings.length;
+            }
+            
+            // Count upcoming appointments (not past)
+            const today = new Date().toISOString().split('T')[0];
+            const upcoming = myBookings.filter(booking => booking.date >= today);
+            const upcomingSpan = document.getElementById('upcomingCount');
+            if (upcomingSpan) {
+                upcomingSpan.textContent = upcoming.length;
+            }
+        }
+        
+        // Call updateStats when page loads
+        updateStats();
+        
+        // Check if user is logged in (additional check)
+        const user = JSON.parse(localStorage.getItem('safemind_user') || '{}');
+        if (!user.loggedIn && window.location.pathname.includes('dashboard.html')) {
+            // If not logged in, redirect to login after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
+        }
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
